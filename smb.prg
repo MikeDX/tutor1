@@ -1,0 +1,5 @@
+PROGRAM smb;
+
+BEGIN
+
+END
