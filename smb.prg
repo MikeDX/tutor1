@@ -14,6 +14,10 @@ END
 
 PROCESS player()
 
+PRIVATE
+
+animcount=0;
+
 BEGIN
 
     x=160;
@@ -21,6 +25,18 @@ BEGIN
     graph=1;
 
     LOOP
+
+        animcount=animcount+1;
+
+        IF(animcount>3)
+            animcount =0;
+
+            graph=graph+1;
+
+            IF(graph==5)
+                graph=2;
+            END
+        END
 
         IF(key(_left))
             x=x-1;
@@ -31,6 +47,7 @@ BEGIN
             x=x+1;
             flags = 0;
         END
+
 
 
         FRAME;
